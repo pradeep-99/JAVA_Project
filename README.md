@@ -1,1 +1,2 @@
-# JAVA_Project
+maven ear example
+=====================
