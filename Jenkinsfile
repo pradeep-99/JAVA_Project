@@ -1,4 +1,6 @@
 node('master'){
+stage 'checkout'
+git branch: 'dev_branch', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
 def isMaster = env.BRANCH_NAME == 'master'
 def isDevelop = env.BRANCH_NAME == 'develop'
 String jobInfo = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME} \n${env.BUILD_URL}"
@@ -10,7 +12,7 @@ currentBuild.result = "SUCCESS"
     string(name: 'SNAPSHOT', value: SNAPSHOT)
     ]
 // calling the job
-    build job: 'DEV-JOB',
+    //build job: 'DEV-JOB',
 //this
 //Code checkout stage
 stage 'checkout'
