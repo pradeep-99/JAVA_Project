@@ -1,6 +1,6 @@
 node('master'){
 stage 'checkout'
-git branch: 'master', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
+git branch: 'master', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/JAVA_Project.git'
 def isMaster = env.BRANCH_NAME == 'master'
 def isDevelop = env.BRANCH_NAME == 'develop'
 String jobInfo = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME} \n${env.BUILD_URL}"
@@ -25,9 +25,9 @@ sh 'ls -ltr ${workspace}'
 echo "JAVA_HOME is ${env.JAVA_HOME} on this machine"
 //get the maven tool
 // This M3 aven tool must configured global configuration in jenkins	
-def mvnhome = tool 'M3'
+def mvnhome = B:\build&release_new_softwares\apache-maven-3.2.5 'M3'
 withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
-    sh "${mvnhome}/bin/mvn clean install"
+    sh "${mvnhome}/bin/mvn clean package"
 }
 //Mark the code build stage
 stage 'Build'
