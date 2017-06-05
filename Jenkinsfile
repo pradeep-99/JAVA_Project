@@ -1,6 +1,6 @@
 node('master'){
 stage 'checkout'
-git branch: 'dev_branch', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
+git branch: 'master', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
 def isMaster = env.BRANCH_NAME == 'master'
 def isDevelop = env.BRANCH_NAME == 'develop'
 String jobInfo = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME} \n${env.BUILD_URL}"
@@ -19,8 +19,8 @@ stage 'checkout'
 def workspace = pwd()
 echo "\u2600 workspace=${workspace}"
 // Get code from repository
-git branch: 'dev_branch', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
-stash name: "config", includes: "*"
+//git branch: 'dev_branch', credentialsId: '1bc9767b-c85b-4ba1-b03e-9c42ca5a22f5', url: 'https://github.com/pradeep-99/aravind_maven.git'
+//stash name: "config", includes: "*"
 sh 'ls -ltr ${workspace}'
 echo "JAVA_HOME is ${env.JAVA_HOME} on this machine"
 //get the maven tool
