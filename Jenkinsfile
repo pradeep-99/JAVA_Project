@@ -6,11 +6,11 @@ def isDevelop = env.BRANCH_NAME == 'develop'
 String jobInfo = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME} \n${env.BUILD_URL}"
 currentBuild.result = "SUCCESS"
 //Assigning parameters
-    parameters: [
-    string(name: 'EAR_TAG', value: EAR_TAG),
-    string(name: 'VERSION_TAG', value: VERSION_TAG),
-    string(name: 'SNAPSHOT', value: SNAPSHOT)
-    ]
+ //   parameters: [
+ //   string(name: 'EAR_TAG', value: EAR_TAG),
+ //   string(name: 'VERSION_TAG', value: VERSION_TAG),
+ //   string(name: 'SNAPSHOT', value: SNAPSHOT)
+ //   ]
 // calling the job
     //build job: 'DEV-JOB',
 //this
