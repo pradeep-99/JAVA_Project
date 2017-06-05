@@ -8,6 +8,7 @@
    <packaging>pom</packaging>
    <name>face application</name>
 
+
    <modules>
       <module>module-ejb</module>
       <module>module-web</module>
