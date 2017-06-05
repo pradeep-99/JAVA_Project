@@ -25,9 +25,9 @@ sh 'ls -ltr ${workspace}'
 echo "JAVA_HOME is ${env.JAVA_HOME} on this machine"
 //get the maven tool
 // This M3 aven tool must configured global configuration in jenkins	
-def mvnhome = B:\build&release_new_softwares\apache-maven-3.2.5 'M3'
-withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
-    sh "${mvnhome}/bin/mvn clean package"
+def MAVEN_HOME = B:\build&release_new_softwares\apache-maven-3.2.5 'M3'
+withEnv(["PATH+MAVEN_HOME=${tool 'm3'}/bin"]) {
+    sh "${MAVEN_HOME}/bin/mvn clean package"
 }
 //Mark the code build stage
 stage 'Build'
