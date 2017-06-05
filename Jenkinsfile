@@ -1,4 +1,4 @@
-node('CI-LABEL'){
+node('master'){
 def isMaster = env.BRANCH_NAME == 'master'
 def isDevelop = env.BRANCH_NAME == 'develop'
 String jobInfo = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME} \n${env.BUILD_URL}"
@@ -11,7 +11,7 @@ currentBuild.result = "SUCCESS"
     ]
 // calling the job
     build job: 'DEV-JOB',
-
+//this
 //Code checkout stage
 stage 'checkout'
 def workspace = pwd()
