@@ -8,7 +8,6 @@ currentBuild.result = "SUCCESS"
     string(name: 'EAR_TAG', value: EAR_TAG),
     string(name: 'VERSION_TAG', value: VERSION_TAG),
     string(name: 'SNAPSHOT', value: SNAPSHOT)
-    wait: false
     ]
 // calling the job
     build job: 'DEV-JOB',
